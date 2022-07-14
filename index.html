@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    
+</head>
+<body background="C:\\Users\boyel\Documents\qrimage.png">
+    <script type="text/javascript">
+         function myfun()
+        {
+            var url="https://chart.googleapis.com/chart?cht=qr&chs=";
+            text=document.getElementById("message").value;
+           
+        mysize=document.getElementById("mysize").value;
+        image=document.getElementById("myimage");
+            if(text!=" " && mysize=="50")
+            {
+              image.src=url+"50x50"+"&chl="+text;
+              
+            }
+            else if(text!=" " && mysize=="100x100")
+            {
+              image.src=url+"100x100"+"&chl="+text;
+            }
+            else if(text!=" " && mysize=="150x150")
+            {
+              image.src=url+"150x150"+"&chl="+text;
+            }
+            else if(text!=" " && mysize=="200x200")
+            {
+              image.src=url+"200x200"+"&chl="+text;
+            }
+            else if(text!=" " && mysize=="250x250")
+            {
+              image.src=url+"250x250"+"&chl="+text;
+            }
+
+            else{
+                alert("Enter all the Fields!!!!!");
+            }  
+        }
+      
+
+    </script>    
+</body>
+<center>
+<div> Enter Size </div>
+<select id="mysize">
+    <option value="50x50">50x50</option>
+    <option value="100x100">100x100</option>
+    <option value="150x150">150x150</option>
+    <option value="200x200">200x200</option>
+    <option value="250x250">250x250</option>
+    </select>
+    <br><br><br>
+    <textarea placeholder="Enter the Text you Wish" id="message"></textarea>
+    <br><br><br>
+  <input type="submit" value="Get QR" id="but" onclick="myfun()">
+  <br><br>
+  <img src="" id="myimage">
+  <script type="text/javascript">
+  document.write(image.src);</script>
+</center>
+</html>
